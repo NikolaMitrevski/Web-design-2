@@ -1,0 +1,145 @@
+﻿@model BrutoNetoApp.Models.Radnik
+
+@{
+    ViewBag.Title = "Podaci o zaposlenom";
+//    Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h2>Podaci o zaposlenom</h2>
+
+<div>
+    <hr />
+    <dl>
+        <dt>
+            ID zaposlenog:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_radnika)
+        </dd>
+
+        <dt>
+            Ime:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            Prezime:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            Adresa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            Iznos neto plate:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iznos_NP)
+        </dd>
+
+        <dt>
+            Iznos bruto plate:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iznos_BP)
+        </dd>
+
+        <dt>
+            Osnovica za obračun poreza:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OZOP)
+        </dd>
+
+        <dt>
+            Porez:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Porez)
+        </dd>
+
+        <dt>
+            PIO na teret radnika:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PNTR)
+        </dd>
+
+        <dt>
+            Zdravstveno na teret radnika:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZNTR)
+        </dd>
+
+        <dt>
+            Nezaposlenost na teret radnika:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NNTR)
+        </dd>
+
+        <dt>
+            Ukupni doprinosi na teret radnika:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDNTR)
+        </dd>
+
+        <dt>
+            PIO na teret poslodavca:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PNTP)
+        </dd>
+
+        <dt>
+            Zdravstveno na teret poslodavca:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZNTP)
+        </dd>
+
+        <dt>
+            Ukupni doprinosi na teret poslodavca:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDNTP)
+        </dd>
+
+        <dt>
+            Trošak poslodavca za isplatu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TPZI)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ažuriraj", "Edit", new { id = Model.Id_radnika }) |
+    @Html.ActionLink("Početna", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BrutoNetoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Radnik">
+          <Key>
+            <PropertyRef Name="Id_radnika" />
+          </Key>
+          <Property Name="Id_radnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresa" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Iznos_NP" Type="float" Nullable="false" />
+          <Property Name="Iznos_BP" Type="float" Nullable="false" />
+          <Property Name="OZOP" Type="float" Nullable="false" />
+          <Property Name="Porez" Type="float" Nullable="false" />
+          <Property Name="PNTR" Type="float" Nullable="false" />
+          <Property Name="ZNTR" Type="float" Nullable="false" />
+          <Property Name="NNTR" Type="float" Nullable="false" />
+          <Property Name="UDNTR" Type="float" Nullable="false" />
+          <Property Name="PNTP" Type="float" Nullable="false" />
+          <Property Name="ZNTP" Type="float" Nullable="false" />
+          <Property Name="UDNTP" Type="float" Nullable="false" />
+          <Property Name="TPZI" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BrutoNetoDBModelStoreContainer">
+          <EntitySet Name="Radnik" EntityType="Self.Radnik" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BrutoNetoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Radnik">
+          <Key>
+            <PropertyRef Name="Id_radnika" />
+          </Key>
+          <Property Name="Id_radnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Iznos_NP" Type="Double" Nullable="false" />
+          <Property Name="Iznos_BP" Type="Double" Nullable="false" />
+          <Property Name="OZOP" Type="Double" Nullable="false" />
+          <Property Name="Porez" Type="Double" Nullable="false" />
+          <Property Name="PNTR" Type="Double" Nullable="false" />
+          <Property Name="ZNTR" Type="Double" Nullable="false" />
+          <Property Name="NNTR" Type="Double" Nullable="false" />
+          <Property Name="UDNTR" Type="Double" Nullable="false" />
+          <Property Name="PNTP" Type="Double" Nullable="false" />
+          <Property Name="ZNTP" Type="Double" Nullable="false" />
+          <Property Name="UDNTP" Type="Double" Nullable="false" />
+          <Property Name="TPZI" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BrutoNetoDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Radniks" EntityType="Self.Radnik" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BrutoNetoDBModelStoreContainer" CdmEntityContainer="BrutoNetoDBEntities1">
+          <EntitySetMapping Name="Radniks">
+            <EntityTypeMapping TypeName="BrutoNetoDBModel.Radnik">
+              <MappingFragment StoreEntitySet="Radnik">
+                <ScalarProperty Name="Id_radnika" ColumnName="Id_radnika" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Iznos_NP" ColumnName="Iznos_NP" />
+                <ScalarProperty Name="Iznos_BP" ColumnName="Iznos_BP" />
+                <ScalarProperty Name="OZOP" ColumnName="OZOP" />
+                <ScalarProperty Name="Porez" ColumnName="Porez" />
+                <ScalarProperty Name="PNTR" ColumnName="PNTR" />
+                <ScalarProperty Name="ZNTR" ColumnName="ZNTR" />
+                <ScalarProperty Name="NNTR" ColumnName="NNTR" />
+                <ScalarProperty Name="UDNTR" ColumnName="UDNTR" />
+                <ScalarProperty Name="PNTP" ColumnName="PNTP" />
+                <ScalarProperty Name="ZNTP" ColumnName="ZNTP" />
+                <ScalarProperty Name="UDNTP" ColumnName="UDNTP" />
+                <ScalarProperty Name="TPZI" ColumnName="TPZI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

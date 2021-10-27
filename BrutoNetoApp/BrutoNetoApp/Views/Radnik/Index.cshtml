@@ -1,0 +1,144 @@
+﻿@model IEnumerable<BrutoNetoApp.Models.Radnik>
+
+@{
+    ViewBag.Title = "Početna";
+    //    Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h1 style="margin-top: 0px">Početna</h1>
+
+<div style="border:2px dotted black; width: 206pt; font-size: 12px;">
+    <div style="margin:10px;">
+        <p>NP - <i>Neto plata</i></p>
+        <p>BP - <i>Bruto plata</i></p>
+        <p>OZOP - <i>Osnovica za obračun poreza</i></p>
+        <p>PNTR - <i>PIO na teret radnika</i></p>
+        <p>ZNTR - <i>Zdravstveno na teret radnika</i></p>
+        <p>NNTR - <i>Nezaposlenost na teret radnika</i></p>
+        <p>UDNTR - <i>Ukupni doprinosi na teret radnika</i></p>
+        <p>PNTP - <i>PIO na teret poslodavca</i></p>
+        <p>ZNTP - <i>Zdravstveno na teret poslodavca</i></p>
+        <p>UDNTP - <i>Ukupni doprinosi na teret poslodavca</i></p>
+        <p>TPZI - <i>Trošak poslodavca za isplatu</i></p>
+    </div>
+</div>
+
+<h2>Lista svih zaposlenih</h2>
+
+<p>
+    @Html.ActionLink("Dodaj podatke novog zaposlenog", "Create")
+</p>
+
+<table class="table">
+    <tr style="background-color: black; color:white;">
+        <th>
+            ID_zaposlenog
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iznos_NP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iznos_BP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OZOP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PNTR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZNTR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NNTR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UDNTR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PNTP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZNTP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UDNTP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TPZI)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="background-color: darkgrey;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_radnika)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iznos_NP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iznos_BP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OZOP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Porez)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PNTR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZNTR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NNTR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UDNTR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PNTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZNTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UDNTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TPZI)
+            </td>
+            <td>
+                @Html.ActionLink("Uredi", "Edit", new { id = item.Id_radnika }) |
+                @Html.ActionLink("Pregledaj", "Details", new { id = item.Id_radnika }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.Id_radnika })
+            </td>
+        </tr>
+    }
+
+</table>
